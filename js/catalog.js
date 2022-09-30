@@ -15,6 +15,7 @@ function populateForm() {
     option.value = Product.allProducts[i].name;
     option.textContent = Product.allProducts[i].name;
     selectElement.appendChild(option);
+
   }
 }
 
@@ -23,7 +24,9 @@ function populateForm() {
 // so that it shows the # of items in the cart and a quick preview of the cart itself.
 function handleSubmit(event) {
   // TODO: Prevent the page from reloading
+
   event.preventDefault();
+
   // Do all the things ...
   addSelectedItemToCart();
   cart.saveToLocalStorage();
@@ -37,6 +40,7 @@ function addSelectedItemToCart() {
   let item = document.getElementById('items').value;
   console.log('item', item);
 
+
   // TODO: get the quantity
   let quantity = document.getElementById('quantity').value;
   console.log('quantity', quantity);
@@ -44,6 +48,7 @@ function addSelectedItemToCart() {
   // TODO: using those, add one item to the Cart
   cart.addItem(item, quantity);
   console.log(cart.items);
+
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
